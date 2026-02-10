@@ -8,319 +8,61 @@
     <meta name="robots" content="index, follow">
     <title>Firmware TV LED Smart 4K - SEMP TCL Philco AOC Samsung | 850+ Modelos</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
-
-        header .subtitle {
-            font-size: 0.95rem;
-            color: #4ade80;
-            font-weight: 500;
-        }
-
-        .stats-bar {
-            background: #0f3460;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-            color: white;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #4ade80;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-
-        .search-container {
-            background: white;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .search-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        #searchInput {
-            width: 100%;
-            padding: 15px 20px 15px 50px;
-            border: 2px solid #e0e0e0;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        #searchInput:focus {
-            outline: none;
-            border-color: #1a1a2e;
-            box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-            color: #888;
-        }
-
-        .results-count {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .table-container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        thead {
-            background: #1a1a2e;
-            color: white;
-            position: sticky;
-            top: 70px;
-        }
-
-        th {
-            padding: 15px 12px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        th:first-child {
-            width: 80px;
-            text-align: center;
-        }
-
-        th:nth-child(2) {
-            width: 150px;
-        }
-
-        th:last-child {
-            width: 120px;
-            text-align: center;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid #eee;
-            transition: background-color 0.2s ease;
-        }
-
-        tbody tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #fafafa;
-        }
-
-        tbody tr:nth-child(even):hover {
-            background-color: #f0f0f0;
-        }
-
-        td {
-            padding: 12px;
-            font-size: 0.9rem;
-        }
-
-        td:first-child {
-            text-align: center;
-            color: #888;
-            font-size: 0.85rem;
-        }
-
-        td:nth-child(2) {
-            font-weight: 600;
-            color: #1a1a2e;
-        }
-
-        td:nth-child(3) {
-            color: #555;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: #1a1a2e;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .download-btn:hover {
-            background: #0f3460;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3);
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 50px;
-            color: #888;
-            display: none;
-        }
-
-        .no-results.show {
-            display: block;
-        }
-
-        footer {
-            background: #1a1a2e;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #4ade80;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 30px 20px; text-align: center; }
+        header h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; }
+        header p { font-size: 1rem; opacity: 0.9; margin-bottom: 5px; }
+        header .subtitle { font-size: 0.95rem; color: #4ade80; font-weight: 500; }
+        .stats-bar { background: #0f3460; padding: 15px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .stat-item { text-align: center; color: white; }
+        .stat-number { font-size: 1.5rem; font-weight: 700; color: #4ade80; }
+        .stat-label { font-size: 0.8rem; opacity: 0.8; }
+        .search-container { background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .search-wrapper { max-width: 600px; margin: 0 auto; position: relative; }
+        #searchInput { width: 100%; padding: 15px 20px 15px 50px; border: 2px solid #e0e0e0; border-radius: 50px; font-size: 1rem; transition: all 0.3s ease; }
+        #searchInput:focus { outline: none; border-color: #1a1a2e; box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1); }
+        .search-icon { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 1.2rem; color: #888; }
+        .results-count { text-align: center; margin-top: 10px; font-size: 0.9rem; color: #666; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .table-container { background: white; border-radius: 10px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        thead { background: #1a1a2e; color: white; position: sticky; top: 70px; }
+        th { padding: 15px 12px; text-align: left; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        th:first-child { width: 80px; text-align: center; }
+        th:nth-child(2) { width: 150px; }
+        th:last-child { width: 120px; text-align: center; }
+        tbody tr { border-bottom: 1px solid #eee; transition: background-color 0.2s ease; }
+        tbody tr:hover { background-color: #f8f9fa; }
+        tbody tr:nth-child(even) { background-color: #fafafa; }
+        tbody tr:nth-child(even):hover { background-color: #f0f0f0; }
+        td { padding: 12px; font-size: 0.9rem; }
+        td:first-child { text-align: center; color: #888; font-size: 0.85rem; }
+        td:nth-child(2) { font-weight: 600; color: #1a1a2e; }
+        td:nth-child(3) { color: #555; }
+        .download-btn { display: inline-block; background: #1a1a2e; color: white; padding: 8px 20px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease; text-align: center; }
+        .download-btn:hover { background: #0f3460; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3); }
+        .no-results { text-align: center; padding: 50px; color: #888; display: none; }
+        .no-results.show { display: block; }
+        footer { background: #1a1a2e; color: white; text-align: center; padding: 30px 20px; margin-top: 40px; }
+        footer a { color: #4ade80; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; z-index: 1000; display: flex; align-items: center; gap: 10px; }
+        .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.4rem;
-            }
-
-            .stats-bar {
-                gap: 20px;
-            }
-
-            th, td {
-                padding: 10px 8px;
-                font-size: 0.8rem;
-            }
-
-            th:first-child, td:first-child {
-                width: 60px;
-            }
-
-            th:nth-child(2), td:nth-child(2) {
-                width: 100px;
-            }
-
-            .download-btn {
-                padding: 6px 12px;
-                font-size: 0.75rem;
-            }
-
-            .whatsapp-float span {
-                display: none;
-            }
-
-            .whatsapp-float {
-                padding: 15px;
-                border-radius: 50%;
-            }
+            header h1 { font-size: 1.4rem; }
+            .stats-bar { gap: 20px; }
+            th, td { padding: 10px 8px; font-size: 0.8rem; }
+            th:first-child, td:first-child { width: 60px; }
+            th:nth-child(2), td:nth-child(2) { width: 100px; }
+            .download-btn { padding: 6px 12px; font-size: 0.75rem; }
+            .whatsapp-float span:last-child { display: none; }
+            .whatsapp-float { padding: 15px; border-radius: 50%; }
         }
-
         @media (max-width: 480px) {
-            th:first-child, td:first-child {
-                display: none;
-            }
-
-            header {
-                padding: 20px 15px;
-            }
-
-            .container {
-                padding: 10px;
-            }
+            th:first-child, td:first-child { display: none; }
+            header { padding: 20px 15px; }
+            .container { padding: 10px; }
         }
     </style>
 </head>
@@ -333,7 +75,7 @@
 
     <div class="stats-bar">
         <div class="stat-item">
-            <div class="stat-number">850+</div>
+            <div class="stat-number">856</div>
             <div class="stat-label">Modelos</div>
         </div>
         <div class="stat-item">
@@ -438,7 +180,7 @@
                     <tr><td>940117</td><td>32S6500FS</td><td>TV LED 32 TCL 32S6500S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940132</td><td>55C6US</td><td>TV LED 55 TCL 55C6US</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940133</td><td>65C6US</td><td>TV LED 65 TCL 65C6US</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td>940141</td><td>32S3900 G3</td><td>TV LED 32 SEMP G3 L32S3900S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940141</td><td>32s3900 G3</td><td>TV LED 32 SEMP G3 L32S3900S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940143</td><td>43S3900 G3</td><td>TV LED 43 SEMP G3 L43S3900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940142</td><td>39S3900 G3</td><td>TV LED 39 SEMP G3 L39S3900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>928928</td><td>32L4700</td><td>TV LED 32 TOSH 32L4700</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
@@ -446,8 +188,8 @@
                     <tr><td>928973</td><td>43U4700LA</td><td>TV LED 43 TOSH 43U4700LA</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>928982</td><td>49U4700LA</td><td>TV LED 49 TOSH 49U4700LA</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>928991</td><td>55U4700LA</td><td>TV LED 55 TOSH 55U4700LA</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td>940328</td><td>32S5300</td><td>TV LED 32 SEMP 32S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td>940329</td><td>43S5300</td><td>TV LED 43 SEMP 43S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940328</td><td>32s5300</td><td>TV LED 32 SEMP 32S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940329</td><td>43s5300</td><td>TV LED 43 SEMP 43S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940285</td><td>49SK6200 G2</td><td>TV LED 49 SEMP 49SK6200</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940286</td><td>55SK6200 G2</td><td>TV LED 55 SEMP 55SK6200</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940134</td><td>65P65US</td><td>TV LED 65 TCL 65P65US</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
@@ -462,10 +204,161 @@
                     <tr><td>940300</td><td>40S5300</td><td>TV LED 40 SEMP 40S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940386</td><td>43S6500FS</td><td>TV LED 43 TCL 43S6500FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td>940371</td><td>43S5300</td><td>TV LED 43 SEMP 43S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940875</td><td>32S6500FS</td><td>TV LED 32 TCL 32S6500S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940876</td><td>32S5300</td><td>TV LED 32 SEMP 32S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940572</td><td>32s3900 G3</td><td>TV LED 32 SEMP G3 L32S3900S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940765</td><td>43S3900 G3</td><td>TV LED 43 SEMP G3 L43S3900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940852</td><td>43s5300</td><td>TV LED 43 SEMP 43S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940895</td><td>50P8M</td><td>TV LED 50 TCL 50P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940893</td><td>50P8M</td><td>TV LED 50 TCL 50P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940894</td><td>50P8M</td><td>TV LED 50 TCL 50P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940752</td><td>65P8M</td><td>TV LED 65 TCL 65P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940903</td><td>50P715</td><td>TV LED 50 TCL 50P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940904</td><td>55P715</td><td>TV LED 55 TCL 55P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940905</td><td>65P715</td><td>TV LED 65 TCL 65P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940907</td><td>75P715</td><td>TV LED 75 TCL 75P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940940</td><td>50SK8300</td><td>TV LED 50 SEMP 50SK8300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941021</td><td>32S6500FS</td><td>TV LED 32 TCL 32S6500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941022</td><td>32S5300</td><td>TV LED 32 SEMP 32S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940996</td><td>43S6500FS</td><td>TV LED 43 TCL 43S6500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940997</td><td>43S6500FS</td><td>TV LED 43 TCL 43S6500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940998</td><td>43S6500FS</td><td>TV LED 43 TCL 43S6500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940866</td><td>55C715</td><td>TV QLED 55 TCL 55C715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940867</td><td>65C715</td><td>TV QLED 65 TCL 65C715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940919</td><td>75X915</td><td>TV QLED 75X915</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940987</td><td>55P8M</td><td>TV LED 55 TCL 55P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940751</td><td>65P8M</td><td>TV LED 65 TCL 65P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940898</td><td>65P8M</td><td>TV LED 65 TCL 65P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940868</td><td>50SK8300</td><td>TV LED 50 SEMP 50SK8300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940896</td><td>50SK8300</td><td>TV LED 50 SEMP 50SK8300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941034</td><td>50SK8300</td><td>TV LED 50 SEMP 50SK8300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941079</td><td>43P615</td><td>TV LED 43 TCL 43P615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941083</td><td>50P615</td><td>TV LED 50 TCL 50P615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>940897</td><td>55P8M</td><td>TV LED 55 TCL 55P8M</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941025</td><td>50P715</td><td>TV LED 50 TCL 50P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941051</td><td>55P15</td><td>TV LED 55 TCL 55P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941054</td><td>50P715</td><td>TV LED 50 TCL 50P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941082</td><td>65P715</td><td>TV LED 65 TCL 65P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941076</td><td>43s5300</td><td>TV LED 43 SEMP 43S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941077</td><td>43S6500FS</td><td>TV LED 43 TCL 43S6500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941078</td><td>50P715</td><td>TV LED 50 TCL 50P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941156</td><td>75P715</td><td>TV LED 75 TCL 75P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941103</td><td>32S6500FS</td><td>TV LED 32 TCL 32S6500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941127</td><td>65C715</td><td>TV QLED 65 TCL 65C715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941079</td><td>43P615</td><td>TV LED 43 TCL 43P615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941082</td><td>65P715</td><td>TV LED 65 TCL 65P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941083</td><td>50P615</td><td>TV LED 50 TCL 50P615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941090</td><td>55P715</td><td>TV LED 55 TCL 55P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941103</td><td>32S6500S</td><td>TV LED 32 TCL 32S6500S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941108</td><td>32S615</td><td>TV LED 32 TCL 32S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941109</td><td>40S615</td><td>TV LED 40 TCL 40S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941110</td><td>32S5200</td><td>TV LED 32 TCL 32S5200</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941125</td><td>43S6500FS</td><td>TV LED 43 TCL 43S6500FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941126</td><td>43S5300</td><td>TV LED 43 SEMP 43S5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941127</td><td>65C715</td><td>TV QLED 65 TCL 65C715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941156</td><td>75P715</td><td>TV LED 75 TCL 75P715</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941172</td><td>32R5500</td><td>TV LED 32 SEMP 32R5500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941173</td><td>32RS520</td><td>TV LED 32 TCL 32RS520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941174</td><td>55P725</td><td>TV LED 55 TCL 55P725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941175</td><td>65P725</td><td>TV LED 65 TCL 65P725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941176</td><td>75P725</td><td>TV LED 75 TCL 75P725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941177</td><td>43R5500</td><td>TV LED 43 SEMP 43R5500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941178</td><td>50RK8500</td><td>TV LED 50 SEMP 50RK8500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941180</td><td>43RS520</td><td>TV LED 43 TCL 43RS520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941181</td><td>50RP620</td><td>TV LED 50 TCL 50RP620</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941184</td><td>32S615</td><td>TV LED 32 TCL 32S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941187</td><td>55C825</td><td>TV LED 55 TCL 55C825</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941188</td><td>65C825</td><td>TV LED 65 TCL 65C825</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941198</td><td>50C725</td><td>TV QLED 50 TCL 50C725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941199</td><td>55C725</td><td>TV QLED 55 TCL 55C725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941200</td><td>65C725</td><td>TV QLED 65 TCL 65C725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941201</td><td>40S615</td><td>TV LED 40 TCL 40S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941202</td><td>43S615</td><td>TV LED 43 TCL 43S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941203</td><td>32S615</td><td>TV LED 32 TCL 32S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941204</td><td>32S5200</td><td>TV LED 32 TCL 32S5200</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941221</td><td>43S615</td><td>TV LED 43 TCL 43S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941222</td><td>50P615</td><td>TV LED 50 TCL 50P615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941240</td><td>50RP620</td><td>TV LED 50 TCL 50RP620</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941241</td><td>50RK8500</td><td>TV LED 50 SEMP 50RK8500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941244</td><td>50P615</td><td>TV LED 50 TCL 50P615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941245</td><td>32R5500</td><td>TV LED 32 SEMP 32R5500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941246</td><td>43R5500</td><td>TV LED 43 SEMP 43R5500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941247</td><td>32RS520</td><td>TV LED 32 TCL 32RS520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941248</td><td>43RS520</td><td>TV LED 43 TCL 43RS520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941253</td><td>32R5500</td><td>TV LED 32 SEMP 32R5500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941254</td><td>32RS520</td><td>TV LED 32 TCL 32RS520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941255</td><td>43R5500</td><td>TV LED 43 SEMP 43R5500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941256</td><td>43RS520</td><td>TV LED 43 TCL 43RS520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941263</td><td>32RS520</td><td>TV LED 32 TCL 32RS520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941264</td><td>32R5500</td><td>TV LED 32 SEMP 32R5500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941265</td><td>65P725</td><td>TV LED 65 TCL 65P725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941266</td><td>75P725</td><td>TV LED 75 TCL 75P725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941267</td><td>50C725</td><td>TV QLED 50 TCL 50C725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941268</td><td>55C725</td><td>TV QLED 55 TCL 55C725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941269</td><td>65C725</td><td>TV QLED 65 TCL 65C725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941270</td><td>40S615</td><td>TV LED 40 TCL 40S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941271</td><td>32S615</td><td>TV LED 32 TCL 32S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941272</td><td>32S5200</td><td>TV LED 32 TCL 32S5200</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941273</td><td>43S615</td><td>TV LED 43 TCL 43S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941274</td><td>43S615</td><td>TV LED 43 TCL 43S615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941277</td><td>55P725</td><td>TV LED 55 TCL 55P725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941285</td><td>43P615</td><td>TV LED 43 TCL 43P615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941314</td><td>55C825</td><td>TV LED 55 TCL 55C825</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941315</td><td>65C825</td><td>TV LED 65 TCL 65C825</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941357</td><td>65P725</td><td>TV LED 65 TCL 65P725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941377</td><td>55C635</td><td>TV QLED 55 TCL 55C635</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941378</td><td>43P635</td><td>TV LED 43 TCL 43P635</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941379</td><td>50P635</td><td>TV LED 50 TCL 50P635</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941380</td><td>55P635</td><td>TV LED 55 TCL 55P635</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941381</td><td>65C835</td><td>TV QLED 65 TCL 65C835</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>941382</td><td>75C835</td><td>TV QLED 75 TCL 75C835</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926751</td><td>L55S4700FS</td><td>TV LED (S) TCL CKD L55S4700FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926760</td><td>L32S4700S</td><td>TV LED (ST) TCL L32S4700S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926779</td><td>L40S4700FS</td><td>TV LED (ST) TCL L40S4700FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926840</td><td>L32D2900</td><td>TV LED (ST) SEMP L32D2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926859</td><td>L40D2900F</td><td>TV LED (ST) SEMP L40D2900F</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926895</td><td>40L1500</td><td>TV LED (S) 40L1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926966</td><td>L48S4700FS</td><td>TV LED (ST) TCL CKD L48S4700FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926975</td><td>32L1500</td><td>TV LED (ST) 32L1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926984</td><td>32L1500</td><td>TV LED (ST) V2 32L1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>926993</td><td>32L1500</td><td>TV LED (ST) V2-LCM 32L1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927000</td><td>32L1500</td><td>TV LED (ST) V3 32L1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927019</td><td>32L1500</td><td>TV LED (ST) V3-LCM 32L1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927037</td><td>40L1500</td><td>TV LED (ST) V2 40L1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927046</td><td>40L2500</td><td>TV LED (ST) 40L2500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927055</td><td>40L2500</td><td>TV LED (ST) V2 40L2500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927064</td><td>43L2500</td><td>TV LED (ST) 43L2500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927073</td><td>DL3253(A)W</td><td>TV LED (ST) DL3253(A)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927082</td><td>DL3253(A)W</td><td>TV LED (ST) V2 DL3253(A)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927091</td><td>DL3253(A)W</td><td>TV LED (ST) V2-LCM DL3253(A)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927117</td><td>DL3253(A)W</td><td>TV LED (ST) V3-LCM DL3253(A)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927126</td><td>LE1473(B)W</td><td>TV LED (ST) LE1473(B)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927135</td><td>L55S4700FS</td><td>TV LED (ST) TCL CKD L55S4700FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927144</td><td>32L1600</td><td>TV LED (ST) TOSH 32L1600</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927153</td><td>40L2600</td><td>TV LED (ST) TOSH 40L2600</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927162</td><td>49L2600</td><td>TV LED (ST) TOSH 49L2600</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927242</td><td>L32D2900</td><td>TV LED (ST) SEMP V2 L32D2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927251</td><td>32L1600</td><td>TV LED (ST) TOSH V2 32L1600</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927260</td><td>LE1473(C)W</td><td>TV LED (ST) LE1473(C)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927313</td><td>L55S4900FS</td><td>TV LED TCL L55S4900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927322</td><td>L49S4900FS</td><td>TV LED 49 TCL L49S4900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927331</td><td>L43S4900FS</td><td>TV LED 43 TCL L43S4900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927340</td><td>L40S4900FS</td><td>TV LED 40 TCL L40S4900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927359</td><td>L32S4900S</td><td>TV LED TCL L32S4900S</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927411</td><td>DL4053(A)F</td><td>TV LED SEMP DL4053(A)F</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927750</td><td>DL3253(A)W</td><td>TV LED (ST) V1-EMC DL3253(A)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>927787</td><td>L40S4900FS</td><td>TV LED 40 TCL WF L40S4900FS</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>928134</td><td>L32D2900</td><td>TV LED SEMP V3-EP1 L32D2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>928269</td><td>DL3959(A)W</td><td>TV LED SEMP DL3959(A)W</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td>928349</td><td>L32D2900</td><td>TV LED SEMP V4-EP1 L32D2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>DL3244(A)W</td><td>TV Semp Toshiba Dl3244(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE46H158I</td><td>TV Aoc Le46h158i</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN55ES7000G</td><td>TV Samsung Un55es7000g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE42D5520</td><td>TV Aoc Le42d5520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE2458</td><td>TV Semp Toshiba Le2458(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>UN46ES7000G</td><td>TV Samsung Un46es7000g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE55U7970S</td><td>TV Aoc Le55u7970s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>UN40D5500RG</td><td>TV Samsung Un40d5500rg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH40R86DSGW</td><td>TV Philco Ph40r86dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV55G50SN4KSB</td><td>TV Philco Ptv55g50sn4ksb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE32S5970</td><td>TV Aoc Le32s5970</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
@@ -474,137 +367,600 @@
                     <tr><td></td><td>UN40H4203AG</td><td>TV Samsung Un40h4203ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>L32D2900</td><td>TV Semp Toshiba Tcl L32d2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN40F6100AG</td><td>TV Samsung Un40f6100ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3253</td><td>TV Semp Toshiba Dl3253 Dl3253w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4057I</td><td>TV Semp Toshiba Sti Le4057i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE46H057D</td><td>TV Aoc Le46h057d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L32S3900S</td><td>TV Semp Toshiba Tcl L32s3900s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32H057D</td><td>TV Aoc Le32h057d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE49S5970</td><td>TV Aoc Le49s5970</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC42D1320</td><td>TV Aoc Lc42d1320</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE50S5970</td><td>TV Le50s5970</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV50E60SN</td><td>TV Philco Ptv50e60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L39S3900FS</td><td>TV L39s3900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32S5295/78G</td><td>TV Aoc 32s5295/78g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32M1475</td><td>TV Aoc Le32m1475</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH43U21DSGW</td><td>TV Philco Ph43u21dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39U21DS</td><td>TV Ph39u21ds</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>UN46D5500RG</td><td>TV Samsung Un46d5500rg 46d5500rg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32D12D</td><td>TV Ptv32d12d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32PFL4017G</td><td>TV Philips 32pfl4017g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH50A17DSGWA</td><td>TV Philco Ph50a17dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32D03HD</td><td>TV Hbuster Hbtv-32d03hd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH16D20D</td><td>TV Philco Ph16d20d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH55E61DSGWA</td><td>TV Philco Ph55e61dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3257I</td><td>TV Sti Le3257i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH49E30DSGWVA</td><td>TV Philco Ph49e30dsgwva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>40PFL5606D/78</td><td>TV Philips 40pfl5606d/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH55A17DSGWA</td><td>TV Philco Ph55a17dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH40E36DSGW</td><td>TV Philco Ph40e36dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24MB</td><td>TV Philco Ph24mb Led A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32D1440/20</td><td>TV Aoc Le32d1440/20 Le32d1440</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>23L2300</td><td>TV Semp 23l2300 32l2300 39l2300 50l2300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32E21DSWN</td><td>TV Philco Ptv32e21dswn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55A16DSGWA</td><td>TV Philco Ph55a16dsgwa 4k Curve</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E20DSGWA</td><td>TV Philco Ph32e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40E60DSGWA</td><td>TV Philco Ph40e60dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>40S6500FS</td><td>TV Led Tcl 40s6500fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51C20PSG</td><td>TV Philco Ph51c20psg 3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51U20PSGW</td><td>TV Philco Ph51u20psgw A</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32H1465</td><td>TV Aoc Le32h1465</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>32S5300</td><td>TV Semp 32s5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>49K1US</td><td>TV Tcl Semp 49k1us / 55k1us</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>L43S4900FS</td><td>TV Tcl 43s4900 L43s4900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L43S4900FS</td><td>TV Tcl 43s4900 L43s4900fs 43s4900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE39S5970</td><td>TV Aoc Le39s5970</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN32J4300AG</td><td>TV Un32j4300ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH28N91D</td><td>TV Philco Ph28n91d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28N91DSGW</td><td>TV Philco Ph28n91dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>DL3261(A)W</td><td>TV Semp Toshiba Dl3261(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH43U21DSGW</td><td>TV Philco Ph43u21dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3277I(A)</td><td>TV Led Semp Toshiba Dl3277i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3973</td><td>TV Led Semp Toshiba Le3973(a)f Le3973</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D21DB</td><td>TV Philco Ph24d21db</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39U20DSGW</td><td>TV Ph39u20dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32M2</td><td>TV Ph32m2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E</td><td>TV Ph32e Lcd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51C21PSG</td><td>TV Philco Ph51c21psg 3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV50G70SBLSG</td><td>TV Ptv50g70sblsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4052I</td><td>TV Semp Toshiba Le4052i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV22G50D</td><td>TV Ptv22g50d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>55Q20AGBLS</td><td>TV Philco 55q20agbls 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39E37DSG</td><td>TV Ph39e37dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32F10D</td><td>TV Led Philco Ptv32f10d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32PHG5102/78</td><td>TV Philips Led 32phg5102/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DM2</td><td>TV Philco Ph24d20dm2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24T21DMT</td><td>TV Philco Ph24t21dmt</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32PHG4109/78</td><td>TV Philips 32phg4109/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42PFL3508G/78</td><td>TV Philips 42pfl3508g/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4045I(A)</td><td>TV Dl4045i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40E20DSGWA</td><td>TV Philco Ptv40e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>43S5295/78G</td><td>TV Aoc 43s5295/78g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4844(A)F</td><td>TV Semp Toshiba Sti Dl4844(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32PFL4007D/78</td><td>TV Philips 32pfl4007d/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40PFG5109/78</td><td>TV Philips 40pfg5109/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32E20DSGWA</td><td>TV Philco Ptv32e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>47PFL3007D/78</td><td>TV Philips 47pfl3007d/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>50PUG6700/78</td><td>TV Philiips 50pug6700/78 50pug6700</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH32S61DG</td><td>TV Philco Ph32s61dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV58F60SN</td><td>TV Philco Ptv58f60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>TC-32FS500B</td><td>TV Panasonic Tc-32fs500b</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE42H057D</td><td>TV Aoc Le42h057d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3278I</td><td>TV Semp Le3278i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24E30D</td><td>TV Philco Ph24e30d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>50P6US</td><td>TV Semp Tcl 50p6us</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>58PUG6900/78</td><td>TV Philips 58pug6900/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>32S6500</td><td>TV Led 32 Tcl 32s6500 32s5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH49F30DSGWA</td><td>TV Philco Ph49f30dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>48L2400</td><td>TV Semp Toshiba 48l2400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE46D3540</td><td>TV Aoc Le46d3540</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51A36PSG3D</td><td>TV Philco Ph51a36psg3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH22D16D</td><td>TV Philco Ph22d16d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32G50SN</td><td>TV Philco Ptv32g50sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40G60SNBL</td><td>TV Ptv40g60snbl</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28C20D</td><td>TV Ph28c20d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42M61DSGW</td><td>TV Ph42m61dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH22B16D</td><td>TV Philco Ph22b16d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D21DM</td><td>TV Philco Ph24d21dm</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32</td><td>TV Ph32 Led A</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E60DSGWA</td><td>TV Ph32e60dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40E36DSGW</td><td>TV Ph40e36dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH19S31D</td><td>TV Philco Ph19s31d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE24D1440</td><td>TV Aoc Le24d1440</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV55Q20SNBL</td><td>TV Philco Ptv55q20snbl</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39N91DSGWA</td><td>TV Philco Ph39n91dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH32C20DSG</td><td>TV Philco Ph32c20dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LT29G</td><td>TV Cce Lt29g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32U20DSG</td><td>TV Philco Ph32u20dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>47PFL5007G/78</td><td>TV Philips Led 47pfl5007g/78 47pfl5007g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28B25DG</td><td>TV Philco Ph28b25dg A E B</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39R25DSG</td><td>TV Philco Ph39r25dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>50P65US</td><td>TV Semp Tcl 50p65us</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH42M30DSGW</td><td>TV Philco Ph42m30dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH58E30DSG</td><td>TV Philco Ph58e30dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>UN40F6400AG</td><td>TV Un40f6400ag Un40f6400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3245I(A)</td><td>TV Semp Tcl Dl3245i(a) Dl3245</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40E21DSWNC</td><td>TV Philco Ptv40e21dswnc</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32S46DSG</td><td>TV Philco Ph32s46dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH50A17DSGW</td><td>TV Philco Ph50a17dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH39E53SG</td><td>TV Philco Ph39e53sg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LT32G</td><td>TV Cce Lt32g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH55E20DSGWA</td><td>TV Philco Ph55e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39N91DSGW</td><td>TV Ph39n91dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32M3</td><td>TV Ph32m3</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39R25DSG</td><td>TV Ph39r25dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32G70SBL</td><td>TV Ptv32g70sbl</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24T21DMT</td><td>TV Ph24t21dmt</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32G60SNBL</td><td>TV Philco Ptv32g60snbl</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28N91D</td><td>TV Ph28n91d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH32E53SG</td><td>TV Philco Ph32e53sg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH49E30DSGW</td><td>TV Ph49e30dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32N62DG</td><td>TV Ph32n62dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV55F61SNC</td><td>TV Philco Ptv55f61snc 4k Led</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH22S31DM</td><td>TV Philco Ph22s31dm</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32M</td><td>TV Ph32m Led A4</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42M</td><td>TV Ph42m Led A3</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH49F30DSGWAC</td><td>TV Philco Ph49f30dsgwac</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE42H057D</td><td>TV Le42h057d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32</td><td>TV Ph32 Led A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH20U21D</td><td>TV Philco Ph20u21d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E63D</td><td>TV Ph32e63d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH43C21P</td><td>TV Ph43c21p 3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40N70DG</td><td>TV Ph40n70dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH19B16DM</td><td>TV Philco Ph19b16dm</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>32L1800</td><td>TV Led Tcl 32l1800</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>50PUG6513/78</td><td>TV Philips 50pug6513/78 50pug6513</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH58E20DSGWAS</td><td>TV Philco Ph58e20dsgwas</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D21DM</td><td>TV Ph24d21dm</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE42M1475</td><td>TV Aoc Le42m1475</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC42H053</td><td>TV Aoc Lc42h053</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>L49S4900FS</td><td>TV Semp Tcl L49s4900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE39D1440</td><td>TV Aoc Le39d1440</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24T21DMTB</td><td>TV Philco Ph24t21dmtb Ph24t21dmtr</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH20U21DR</td><td>TV Philco Ph20u21dr</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH43E60DSGW</td><td>TV Ph43e60dsgw 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DM2</td><td>TV Philco Ph24d20dm2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32M4</td><td>TV Ph32m4 Lcd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH49U21DSGW</td><td>TV Philco Ph49u21dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DG</td><td>TV Philco Ph24d20dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42M</td><td>TV Ph42m Led A4</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH29T21D</td><td>TV Ph29t21d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42</td><td>TV Ph42 Led A</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32B51DSGW</td><td>TV Ph32b51dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH49E20DSGWA</td><td>TV Ph49e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV50F60S</td><td>TV Philco Ptv50f60s 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV39N87D</td><td>TV Ptv39n87d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH20N91D</td><td>TV Philco Ph20n91d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32C30D</td><td>TV Philco Ptv32c30d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42</td><td>TV Ph42 Led A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40B28DSGW</td><td>TV Ph40b28dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32LG3000</td><td>TV LG 32lg3000</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV55F61SNC</td><td>TV Philco Ptv55f61snc</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV43E60SN</td><td>TV Philco Ptv43e60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>40L2400</td><td>TV Semp Toshiba 40l2400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4056</td><td>TV Toshiba Sti Le4056(b)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE39D3540</td><td>TV Aoc Le39d3540</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE40F1465</td><td>TV Aoc Le40f1465</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE43S5977</td><td>TV Aoc Le43s5977</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH39N86DSGW</td><td>TV Philco Ph39n86dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE50U7970S</td><td>TV Aoc Le50u7970s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32S5970S</td><td>TV Le32s5970s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4652I</td><td>TV Semp Toshiba Le4652i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN40J5200AG</td><td>TV Samsung Un40j5200ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN40H4200AG</td><td>TV Samsung Un40h4200ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE42H158I</td><td>TV Aoc Le42h158i</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PTV50G70SBLSG</td><td>TV Philco Ptv50g70sblsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40PFL3605D</td><td>TV Philips 40pfl3605d / 78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40PFL5606D78</td><td>TV Philips 40pfl5606d78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>50U6305</td><td>TV Aoc 50u6305 / 78g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32W157</td><td>TV Le32w157</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32D5520</td><td>TV Le32d5520</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE50D1440</td><td>TV Aoc Le50d1440</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV50F60SN4K</td><td>TV Philco Ptv50f60sn4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH32F33DG</td><td>TV Philco Ph32f33dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24M</td><td>TV Philco Ph24m</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LN40B450C4M</td><td>TV Samsung Ln40b450c4m</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN40F5500AG</td><td>TV Samsung Un40f5500ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3252I</td><td>TV Semp Toshiba Le3252i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH55X57DAG</td><td>TV Philco Ph55x57dag 3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>55U6295/78G</td><td>TV Aoc 55u6295/78g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV43G50SN</td><td>TV Philco Ptv43g50sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4061(A)F</td><td>TV Toshiba Sti Dl4061(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV55Q20SNBL4K</td><td>TV Philco Ptv55q20snbl4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE32M1475</td><td>TV Aoc Le32m1475</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32H1461</td><td>TV Aoc Le32h1461</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE32S5760</td><td>TV Aoc Le32s5760</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>32S5295/78G</td><td>TV Aoc 32s5295/78g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>T2965MS</td><td>TV Aoc T2965ms</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV58F80SNS</td><td>TV Philco Ptv58f80sns</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH32C10DSGW</td><td>TV Philco Ph32c10dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Toshiba Sti Le3256(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN48H4203AG</td><td>TV Samsung Un48h4203ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE40D1442</td><td>TV Aoc Le40d1442</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32H158I</td><td>TV Le32h158i</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>50U6295/78G</td><td>TV Aoc 50u6295/78g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN55F6400AGXZD</td><td>TV Samsung Un55f6400agxzd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PTV50E60SN</td><td>TV Philco Ptv50e60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV50D60SA</td><td>TV Philco Ptv50d60sa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE43S5970S</td><td>TV Aoc Le43s5970s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3944(A)F</td><td>TV Semp Toshiba Dl3944(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>D32W931</td><td>TV Aoc D32w931</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>43L2500</td><td>TV Tcl 43l2500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE43U7970</td><td>TV Aoc Le43u7970</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN43J5290AG</td><td>TV Samsung Un43j5290ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>UN46ES6500G</td><td>TV Samsung Un46es6500g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LN32D400E1G</td><td>TV Samsung Ln32d400e1g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4056</td><td>TV Toshiba Sti Le4056(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE46H158Z</td><td>TV Aoc Le46h158z</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH39E60DSGWA</td><td>TV Philco Ph39e60dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV43N5CG70BLF</td><td>TV Philco Ptv43n5cg70blf</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH42M61DSGW</td><td>TV Philco Ph42m61dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32W156</td><td>TV Le32w156</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE24D1440</td><td>TV Aoc Le24d1440</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE40H157</td><td>TV Aoc Le40h157</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Toshiba Sti Le3256(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>T2355E</td><td>TV Aoc T2355e</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>LE50U7970</td><td>TV Aoc Le50u7970</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH43E60DSGW</td><td>TV Philco Ph43e60dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42PFL3604/78</td><td>TV Philips 42pfl3604/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3975I(A)</td><td>TV Semp Toshiba Dl3975i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>55PFG5100/78</td><td>TV Philips 55pfg5100/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39F33DSG</td><td>TV Philco Ph39f33dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24B</td><td>TV Philco Ph24b</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32G50SNS</td><td>TV Philco Ptv32g50sns</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV55U21DSWN</td><td>TV Phico Ptv55u21dswn 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>32L2300</td><td>TV Led Semp Toshiba 32l2300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>48PFG6309/78</td><td>TV Philips 48pfg6309/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2970(A)W</td><td>TV Led Semp Toshiba Dl2970(a)w Dl2970aw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42PFG6519/78</td><td>TV Philips 42pfg6519/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55M</td><td>TV Philco Ph55m Led</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40S615</td><td>TV Ou 40s615</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV75E30DSW</td><td>TV Philco Ptv75e30dsw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH65X78DAG</td><td>TV Philco Ph65x78dag 4k 3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>24L1700</td><td>TV Semp Tcl 24l1700</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E32D</td><td>TV Ph32e32d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32B51DG</td><td>TV Philco Ph32b51dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH58E38DSG</td><td>TV Philco Ph58e38dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42PFL5008G</td><td>TV Philips 42pfl5008g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L32S4700</td><td>TV L32s4700 L32s4700s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>L43S3900</td><td>TV Led Semp L43s3900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH43N91DSGWA</td><td>TV Philco Ph43n91dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV39N92DSGWA</td><td>TV Philco Ptv39n92dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42L05FD</td><td>TV Buster Hbtv-42l05fd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32U20DG</td><td>TV Philco Ph32u20dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>43PFG5813/78</td><td>TV Philips 43pfg5813/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>29D07HD</td><td>TV H-buster Hbtv-29d07hd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32PFL3008D/78</td><td>TV 32pfl3008d/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>50SK8300</td><td>TV 50sk8300 55sk8300 60sk8300 65sk8300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>55P65US</td><td>TV 55p65us</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH29E52DG</td><td>TV Philco Ph29e52dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH32C10DSGWA</td><td>TV Philco Ph32c10dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E31DG</td><td>TV Philco Ph32e31dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH40U21DSGW</td><td>TV Philco Ph40u21dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH39E60DSGWA</td><td>TV Philco Ph39e60dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24A</td><td>TV Philco Ph24a Lcd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28S63D</td><td>TV Philco Ph28s63d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40L5400</td><td>TV Sti Semp 40l5400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2971(B)W</td><td>TV Sti Tcl Dl2971(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32D10N5SKH</td><td>TV Philco Ptv32d10n5skh</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH40E20DSGWA</td><td>TV Philco Ph40e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH32B51DSGWA</td><td>TV Philco Ph32b51dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH39N92DSGWA</td><td>TV Philco Ph39n92dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55E51DSGW</td><td>TV Ph55e51dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH48B40DSGW</td><td>TV Ph48b40dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH20U21DB</td><td>TV Philco Ph20u21db</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24T21DG</td><td>TV Ph24t21dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH23F33DM</td><td>TV Philco Ph23f33dm</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40PFG6309/78</td><td>TV Philiips 40pfg6309/78 40pfg6309</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39N92DSGWA</td><td>TV Philco Ph39n92dsgwa Ou Ph40f10dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>50P725</td><td>TV 50p725 55p725 60p725 65p725</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>UN55TU7000G</td><td>TV Un55tu7000g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32W157</td><td>TV Aoc Le32w157</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH19M</td><td>TV Philco Ph19m Led A</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3273</td><td>TV Semp Toshiba Le3273(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>43S6500</td><td>TV Tcl Mod. 43s6500 43s5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV32N87SA</td><td>TV Philco Ptv32n87sa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32PFL3605D/78</td><td>TV Philips 32pfl3605d/78 32pfl3605</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE49F1465</td><td>TV Aoc Le49f1465</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>55PFG7309</td><td>TV Philips 55pfg7309 / 78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28N91DSGWA</td><td>TV Philco Ph28n91dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>43S3900FS</td><td>TV Semp Tcl 43s3900fs 43s3900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>L43S4900FS</td><td>TV Tcl L43s4900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40PFG4109/78</td><td>TV Philips 40pfg4109/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH29E52DG</td><td>TV Philco Ph29e52dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH58E51DSGW</td><td>TV Philco Ph58e51dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>48L5400</td><td>TV Semp Tcl 48l5400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>55K1US</td><td>TV Tcl Semp 55k1us</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32W156</td><td>TV Aoc Le32w156</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC42D1320</td><td>TV Aoc Lc42d1320</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>4203FD</td><td>TV Buster 4203fd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3945I(A)</td><td>TV Semp Toshiba Dl3945i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE24M1475</td><td>TV Aoc Le24m1475 / 25</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH39U21DSGW</td><td>TV Philco Ph39u21dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24MR</td><td>TV Ph24mr Led A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24MB</td><td>TV Ph24mb Led Game A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH40D10DSGW</td><td>TV Philco Ph40d10dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH43N91DSGW</td><td>TV Philco Ph43n91dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PTV39G65N5CH</td><td>TV Philco Ptv39g65n5ch</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PTV50G60SN</td><td>TV Ptv50g60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>32S6500S</td><td>TV Tcl 32s6500s 40s6500fs 43s6500fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PTV39N86SA</td><td>TV Philco Ptv39n86sa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PTV58F80SNS</td><td>TV Philco Ptv58f80sns 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>L43S4900</td><td>TV Tcl L43s4900 L43s4900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH49E20DSGWA</td><td>TV Philco Ph49e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH39N86DSGW</td><td>TV Philco Ph39n86dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>L40D2900F</td><td>TV Semp Toshiba Tcl L40d2900f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PTV50F60SN</td><td>TV Philco Ptv50f60sn 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>32L2800</td><td>TV Semp Toshiba Tcl 32l2800</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32B28DSGW</td><td>TV Ph32b28dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH16D10D</td><td>TV Philco Ph16d10d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28D27D</td><td>TV Ph28d27d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42E53SG</td><td>TV Ph42e53sg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39E31DSGW</td><td>TV Ph39e31dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L07HD</td><td>TV H-buster Hbtv-32l07hd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC32W053</td><td>TV Lc32w053</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>HBTV-3203HD</td><td>TV H-buster Hbtv-3203hd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>L32S4900S</td><td>TV Semp Toshiba Tcl L32s4900s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32S6500S</td><td>TV Tcl 32s6500s 40s6500fs 43s6500fs 32s5300 43s5300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>47PFG6809</td><td>TV Led Philips 47pfg6809</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PTV39G60S</td><td>TV Philco Ptv39g60s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH32E60DSGWA</td><td>TV Philco Ph32e60dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH39U20DSGW</td><td>TV Philco Ph39u20dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
-                    <tr><td></td><td>PH32E20DSGWA</td><td>TV Philco Ph32e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24M</td><td>TV Ph24m Led Game A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DM</td><td>TV Philco Ph24d20dm</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE48D1452</td><td>TV Le48d1452</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40U16DSG</td><td>TV Ph40u16dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV50F60SN</td><td>TV Philco Ptv50f60sn 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39U21DG</td><td>TV Ph39u21dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L2800</td><td>TV Semp Toshiba Tcl 32l2800</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32LV3500</td><td>TV LG 32lv3500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LK42D</td><td>TV Cce Lk42d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42M61DSG</td><td>TV Philco Ph42m61dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55X57DAG</td><td>TV Philco Ph55x57dag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>49F68DSWN</td><td>TV Philco 49f68dswn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39E31DG</td><td>TV Ph39e31dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV50E60SN</td><td>TV Philco Ptv50e60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DMTR</td><td>TV Philco Ph24d20dmtr</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42B51DSGWA</td><td>TV Ph42b51dsgwa Android</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH58E38DSG</td><td>TV Philco Ph58e38dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32N62DGB</td><td>TV Ph32n62dgb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV42G10N5SKF</td><td>TV Ptv42g10n5skf</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24T21DMTR</td><td>TV Ph24t21dmtr</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH46</td><td>TV Ph46 Led A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DGB</td><td>TV Philco Ph24d20dgb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DMB2</td><td>TV Philco Ph24d20dmb2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42F10DSGWAC</td><td>TV Philco Ph42f10dsgwac</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L40S4900</td><td>TV Tcl / Semp L40s4900 (fs)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LH42G</td><td>TV Cce Lh42g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV39F61D</td><td>TV Ptv39f61d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>50PUG6102/78</td><td>TV Philips 50pug6102/78 50pug6102</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L1500</td><td>TV Sem Tcl 32l1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4077I(A)</td><td>TV Toshiba Dl4077i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42M30DSGWV</td><td>TV Philco Ph42m30dsgwv</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV39N86SA</td><td>TV Philco Ptv39n86sa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4845I</td><td>TV Semp Sti Tv Dl4845i Dl4845i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>55PUG6513/78</td><td>TV Philips 55pug6513/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV50G60SN</td><td>TV Ptv50g60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV48A12DSGWA</td><td>TV Philco Ptv48a12dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE43D1452</td><td>TV Aoc Le43d1452</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV39G65N5CH</td><td>TV Philco Ptv39g65n5ch</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV55F61SN4K</td><td>TV Ptv55f61sn4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24N91D</td><td>TV Ph24n91d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39F33DSG</td><td>TV Ph39f33dsg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DMR2</td><td>TV Philco Ph24d20dmr2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH19T21DGR</td><td>TV Philco Ph19t21dgr</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D21D</td><td>TV Philco Ph24d21d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39N86DSGW</td><td>TV Philco Ph39n86dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L2400</td><td>TV Semp Toshiba 32l2400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42PFL4908G/78</td><td>TV Philips 42pfl4908g/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L40D2900F</td><td>TV Semp Toshiba Tcl L40d2900f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L43S4900</td><td>TV Tcl L43s4900 L43s4900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3264</td><td>TV Semp Toshiba Le3264(b)w Le3264b</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Sti Le3256 (a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42</td><td>TV Ph42 Led A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24M</td><td>TV Ph24m Led A</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28B25DG</td><td>TV Philco Ph28b25dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39N91DG</td><td>TV Ph39n91dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55M</td><td>TV Ph55m Led Smart 3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40U21DSGW</td><td>TV Ph40u21dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV58F80SNS</td><td>TV Philco Ptv58f80sns 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E31DSGW</td><td>TV Ph32e31dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH23F33D</td><td>TV Philco Ph23f33d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH22S31D</td><td>TV Philco Ph22s31d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51U20PSGW</td><td>TV Philco Ph51u20psgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51C20PSG</td><td>TV Ph51c20psg 3d Plasma</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4077I(A)</td><td>TV Semp Toshiba Dl4077i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28S63D</td><td>TV Philco Ph28s63d Led</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24T21DMTB</td><td>TV Ph24t21dmtb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32M</td><td>TV Ph32m Led A3</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH29E63D</td><td>TV Ph29e63d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55E20DSGWA</td><td>TV Ph55e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PHILCOPH24M</td><td>TV Philcoph24m</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH20U21DB</td><td>TV Philco Ph20u21db</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32S5760</td><td>TV Pkg Le32s5760</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV32D12D</td><td>TV Btv32d12d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV39G60N5CH</td><td>TV Btv39g60n5ch</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV42G70N5CF</td><td>TV Btv42g70n5cf</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV24G50DCH</td><td>TV Ptv24g50dch</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>28D2900</td><td>TV Semp Toshiba 28d2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L05HD</td><td>TV Hbuster Hbtv-32l05hd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3970(A)F</td><td>TV Dl3970(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>49SK6000</td><td>TV Led Semp/tcl/tosh 49sk6000</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40G71AGBL</td><td>TV Ptv40g71agbl</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40E21SNS</td><td>TV Ptv40e21sns</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV43E10N5SF</td><td>TV Ptv43e10n5sf</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH48S61DG</td><td>TV Ph48s61dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV32G52S</td><td>TV Btv32g52s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC32W053</td><td>TV Lc32w053</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32D03HD</td><td>TV Hbtv-32d03hd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LH42G</td><td>TV Cce Lh42g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L2400</td><td>TV Led Semp Toshiba 32l2400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH20N91D</td><td>TV Philco Ph20n91d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC3251FDA</td><td>TV Lc3251fda</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV39G65N5CH</td><td>TV Btv39g65n5ch</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3253</td><td>TV Semp Toshiba Dl3253</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42PFL4007G</td><td>TV Philips 42pfl4007g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4056</td><td>TV Led Semp Toshiba Le4056(b)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3270(A)</td><td>TV Led Semp Toshiba Dl3270(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE42H057</td><td>TV Aoc Le42h057</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3959(A)</td><td>TV Led Semp/tcl/tosh Dl3959(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40D2900</td><td>TV Led Tcl 40d2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>49SK6200</td><td>TV Led Semp/tcl/tosh 49sk6200</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE2456</td><td>TV Led Semp Toshiba Le2456(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Led Semp Toshiba Le3256(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L32S4700</td><td>TV L32s4700 L32s4700s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4057</td><td>TV Le4057(b)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE26W154</td><td>TV Le26w154</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4845I(A)</td><td>TV Semp Dl4845i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC3255</td><td>TV Led Semp Toshiba Lc3255(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3264</td><td>TV Semp Le3264(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4057I</td><td>TV Led Semp Toshiba Le4057i</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV55Q20AGBLS4K</td><td>TV Ptv55q20agbls4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH60D16DSGWN</td><td>TV Ph60d16dsgwn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH19S31D</td><td>TV Philco Ph19s31d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L2400</td><td>TV Toshiba 32l2400 V2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC4055FDA</td><td>TV Led Semp Toshiba Lc4055fda</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39U21DSGW</td><td>TV Philco Ph39u21dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4057I</td><td>TV Le4057i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>UN55JU6500G</td><td>TV Sansung Samsung Un55ju6500g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2970(B)</td><td>TV Led Semp Toshiba Dl2970(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC3251FDA</td><td>TV Led Semp Toshiba Lc3251fda</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3244(A)W</td><td>TV Led Semp Toshiba Dl3244(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2971(B)W</td><td>TV Led Semp Toshiba Dl2971(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L1500</td><td>TV Led Semp/tcl/tosh 32l1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3270(B)</td><td>TV Led Semp Toshiba Dl3270(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L1600</td><td>TV Led Tcl 32l1600</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32H158I</td><td>TV Aoc Le32h158i</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28B25DG</td><td>TV Ph28b25dg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE40F1465</td><td>TV Aoc Le40f1465 Barcode 01b</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE39D7430</td><td>TV Aoc Le39d7430</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV28G50D</td><td>TV Ptv28g50d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42M30DSGW</td><td>TV Ph42m30dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E63D</td><td>TV Philco Ph32e63d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4845I</td><td>TV Led Semp Toshiba Dl4845i</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>48L2400</td><td>TV Led Semp Toshiba 48l2400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L32S3900</td><td>TV Led Semp/tcl/tosh L32s3900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42M61DSGW</td><td>TV Ph42m61dsgw</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3273</td><td>TV Led Semp Toshiba Le3273</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40L5400</td><td>TV Semp 40l5400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40L2400</td><td>TV Led Semp Toshiba 40l2400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55M</td><td>TV Ph55m Led Smart 3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV42G10N5SKF</td><td>TV Btv42g10n5skf</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55X57DAG3D</td><td>TV Ph55x57dag3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40E60SNC</td><td>TV Ptv40e60snc</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32N5SE10H</td><td>TV Ptv32n5se10h</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40E21DSWNC</td><td>TV Ptv40e21dswnc</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3954(A)</td><td>TV Semp Toshiba Dl3954(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51C20PSGVA</td><td>TV Philco Ph51c20psgva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV32G51SN</td><td>TV Btv32g51sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L55S4700</td><td>TV Led Semp/tcl/tosh L55s4700</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>55SK6200</td><td>TV Led Semp/tcl/tosh 55sk6200</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE46H057</td><td>TV Aoc Le46h057</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L32S4900S</td><td>TV Semp L32s4900s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LT32G</td><td>TV Cce Lt32g</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3970(B)</td><td>TV Led Semp Toshiba Dl3970(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LT32D</td><td>TV Lt32d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Semp Toshiba Le3256(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE1951</td><td>TV Led Semp Toshiba Le1951(a)wda</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L28D2900</td><td>TV Semp L28d2900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE2458</td><td>TV Le2458(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32E20AGBL</td><td>TV Ptv32e20agbl</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV50G70SBLSG4K</td><td>TV Ptv50g70sblsg4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV49G50SN4K</td><td>TV Ptv49g50sn4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28D27D</td><td>TV Philco Ph28d27d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32G50D</td><td>TV Ptv32g50d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV40E21S</td><td>TV Btv40e21s</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40AL800(A)</td><td>TV Semp Toshiba 40al800(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3970(A)</td><td>TV Semp Toshiba Dl3970(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2970(B)W</td><td>TV Dl2970(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39U21DS</td><td>TV Ph39u21ds</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>39L2300</td><td>TV Led Semp Toshiba 39l2300</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE42M1465</td><td>TV Aoc Le42m1465</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L43S4900FS</td><td>TV Semp L43s4900fs</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>43PFG5102</td><td>TV Philips 43pfg5102</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>49K1US</td><td>TV Led Semp/tcl/tosh 49k1us</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40L1500</td><td>TV Led Semp/tcl/tosh 40l1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L40S4700</td><td>TV Led Semp/tcl/tosh L40s4700</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>55PFG5100</td><td>TV Philips 55pfg5100</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV43AGCG70BLF</td><td>TV Ptv43agcg70blf</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV39E60SN</td><td>TV Ptv39e60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV40E63SN</td><td>TV Btv40e63sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH16D10D</td><td>TV Philco Ph16d10d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40H157</td><td>TV Aoc 40h157</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2971(B)</td><td>TV Semp Toshiba Dl2971(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42E53SG</td><td>TV Led Philco Ph42e53sg</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE1473</td><td>TV Le1473(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC42H053</td><td>TV Aoc Lc42h053</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE1958</td><td>TV Le1958(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3274</td><td>TV Led Semp Toshiba Le3274(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV58F60SN</td><td>TV Philco Ptv58f60sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>40PFL5606D</td><td>TV Philips 40pfl5606d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE40H157</td><td>TV Aoc Le40h157</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42L05FD</td><td>TV Hbtv-42l05fd</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2970(A)</td><td>TV Led Semp Toshiba Dl2970(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4844</td><td>TV Led Semp Toshiba Dl4844</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC4246</td><td>TV Led Semp Toshiba Lc4246</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL4053(A)</td><td>TV Led Semp/tcl/tosh Dl4053(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH23F33D</td><td>TV Philco Ph23f33d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV50Q20SNBL4K</td><td>TV Ptv50q20snbl4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH19B16D</td><td>TV Philco Ph19b16d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV39G50D</td><td>TV Ptv39g50d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L48S4700</td><td>TV Led Semp/tcl/tosh L48s4700</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE2451</td><td>TV Led Semp Toshiba Le2451(a)fda</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L1500</td><td>TV Led Semp/tcl/tosh 32l1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4057</td><td>TV Led Semp Toshiba Le4057(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>42PFL4007G/78</td><td>TV 42pfl4007g/78</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL3970(A)</td><td>TV Led Semp Toshiba Dl3970(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH16N59D</td><td>TV Philco Ph16n59d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3250</td><td>TV Led Semp Toshiba Le3250(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40E21DSWN</td><td>TV Ptv40e21dswn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32G60SNBL</td><td>TV Ptv32g60snbl</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV40G50SN</td><td>TV Ptv40g50sn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3278I</td><td>TV Semp Toshiba Le3278i</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2970(A)</td><td>TV Semp Toshiba Dl2970(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>48L2400</td><td>TV Semp Toshiba 48l2400</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Toshiba Le3256(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3257I</td><td>TV Led Semp Toshiba Le3257i(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32M1475</td><td>TV Aoc Le32m1475 32m1475</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Le3256(b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4057I</td><td>TV Le4057i(b)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LC32D1320</td><td>TV Lc32d1320</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L43S3900</td><td>TV Led Semp/tcl/tosh L43s3900</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE2451</td><td>TV Semp Le2451(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32S5295/78G</td><td>TV Aoc 32s5295/78g V2.213</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE24M1475</td><td>TV Aoc Le24m1475 / 25</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV49E68DSWN</td><td>TV Philco Ptv49e68dswn</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>50P8M</td><td>TV Tcl 50p8m Led</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L1500</td><td>TV Led Semp/tcl/tosh 32l1500</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4056</td><td>TV Le4056(b)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3273</td><td>TV Led Semp Toshiba Le3273(a)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE4057I</td><td>TV Le4057i(c)</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>DL2944(A)W</td><td>TV Led Semp Toshiba Dl2944(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE1958</td><td>TV Led Semp Toshiba Le1958(a)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3973</td><td>TV Semp Toshiba Le3973(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>L32S4700</td><td>TV Led Semp/tcl/tosh L32s4700</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PL43F4000AG</td><td>TV Samsung Pl43f4000ag</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE2458</td><td>TV Led Semp Toshiba Le2458(a)f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>32L1800</td><td>TV Led Tcl 32l1800</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40U21DSGWVB</td><td>TV Philco Ph40u21dsgwvb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39U20DSGWVA</td><td>TV Philco Ph39u20dsgwva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32B51DVA</td><td>TV Philco Ptv32b51dva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39E31DG</td><td>TV Philco Ph39e31dg Ver. A</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32E20DSGWA</td><td>TV Philco Ptv32e20dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E60DSGWAVA</td><td>TV Philco Ph32e60dsgwava</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28C20D</td><td>TV Ph28c20d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH49U21DSGW</td><td>TV Philco Ph49u21dsgw Original</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV42G70N5CF</td><td>TV Philco Btv42g70n5cf</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>TV</td><td>Philco Ptv65a16sa4kcurve</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH24D20DM2</td><td>TV Philco Ph24d20dm2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE3256</td><td>TV Sti Le3256 (b)w</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH51A36PSG3D</td><td>TV Philco Ph51a36psg3d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH49U21DSGWVA</td><td>TV Philco Ph49u21dsgwva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55E61DSGWA4K</td><td>TV Philco Ph55e61dsgwa4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32B51DVB</td><td>TV Philco Ptv32b51dvb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32C10DSGWA</td><td>TV Philco Ph32c10dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH49F30DSGWACV</td><td>TV Philco Ph49f30dsgwacv</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV60F90DSWN4K</td><td>TV Philco Ptv60f90dswn4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32E20DSGWAVA</td><td>TV Philco Ph32e20dsgwava</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>TV</td><td>Philco Tv_ph55a17dsgwava</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH55A17DSGWA</td><td>TV Philco Ph55a17dsgwa 4k</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>32L2600</td><td>TV Semp Tcl 32l2600</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40D10DSGW</td><td>TV Philco Ph40d10dsgw Ver. A</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32G50SNVA</td><td>TV Philco Ptv32g50snva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH58E20DSGWASV</td><td>TV Philco Ph58e20dsgwasv</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH40E20DSGWAVA</td><td>TV Philco Ph40e20dsgwava</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28N91DSGWAVB</td><td>TV Philco Ph28n91dsgwavb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV50D60SAVA</td><td>TV Philco Ptv50d60sava</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32M1475/25</td><td>TV Aoc Le32m1475/25</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH58E20DSGWASVA</td><td>TV Philco Ph58e20dsgwasva Led-a</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE43S5760</td><td>TV Aoc Le43s5760</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH39U21DSGWVA</td><td>TV Philco Ph39u21dsgwva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH55E30DSGWVA</td><td>TV Philco Ph55e30dsgwva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42F10DSGWA</td><td>TV Ph42f10dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH42</td><td>TV Ph42 Led A2</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH32B51DSGWAVH</td><td>TV Philco Ph32b51dsgwavh</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PTV32N87SAVA</td><td>TV Philco Ptv32n87sava</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>BTV42G70N5CFVA</td><td>TV Philco Btv42g70n5cfva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH28N91DSGWA</td><td>TV Philco Ph28n91dsgwa</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>LE32M1475/25</td><td>TV Aoc Le32m1475/25</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH58E51DSGWVB</td><td>TV Philco Ph58e51dsgwvb</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
+                    <tr><td></td><td>PH58E51DSGWVA</td><td>TV Philco Ph58e51dsgwva</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>L40D2900F</td><td>TV L40d2900f</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH49F30DSGWAC</td><td>TV Philco Ph49f30dsgwac</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
                     <tr><td></td><td>PH24N92D</td><td>TV Philco Ph24n92d</td><td><a href="https://chatprov.com.br/bot_tv/" target="_blank" class="download-btn">Download</a></td></tr>
@@ -658,7 +1014,6 @@
             }
         });
 
-        // Atualizar contagem inicial
         visibleCount.textContent = totalRows;
     </script>
 </body>
